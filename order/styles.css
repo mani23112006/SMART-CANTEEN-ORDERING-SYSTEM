@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+}
+
+header {
+    background: #ff0055;
+    color: #fff;
+    padding: 18px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.menu {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.menu-item button {
+    background: #ff0055;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#cart-box {
+    background: white;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.popup-box {
+    background: white;
+    width: 300px;
+    margin: 120px auto;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}

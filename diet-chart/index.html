@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Canteen - Diet Chart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Canteen Diet Chart</h1>
+
+    <!-- ================= Gym Diet Section ================= -->
+    <div class="section" id="gym-section">
+      <h2>🏋️ Gym Diet Recommendations</h2>
+      <p>This section is for people who regularly go to the gym or want to gain muscle. Enter your details below:</p>
+
+      <label>Goal:
+        <select id="gym-goal">
+          <option value="gain">Muscle Gain</option>
+          <option value="lose">Fat Loss</option>
+          <option value="maintain">Maintain Weight</option>
+        </select>
+      </label>
+
+      <button id="generateGymDiet">Generate Gym Diet</button>
+
+      <div id="gymResult" class="hidden">
+        <h3>Recommended Gym Meal Plan:</h3>
+        <table id="gymMealTable">
+          <tr>
+            <th>Meal</th>
+            <th>Calories</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fats (g)</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ================= Personalized Diet Section ================= -->
+    <div class="section" id="personal-section">
+      <h2>🧘 Personalized Diet Generator</h2>
+      <p>Generate a diet plan based on your personal health information.</p>
+
+      <label>Age: <input type="number" id="age"></label>
+      <label>Gender:
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+      <label>Weight (kg): <input type="number" id="weight"></label>
+      <label>Height (cm): <input type="number" id="height"></label>
+      <label>Activity Level:
+        <select id="activity">
+          <option value="1.2">Sedentary</option>
+          <option value="1.375">Lightly Active</option>
+          <option value="1.55">Moderately Active</option>
+          <option value="1.725">Very Active</option>
+        </select>
+      </label>
+      <label>Health Issues (optional): 
+        <input type="text" id="health" placeholder="e.g., diabetes, high BP">
+      </label>
+
+      <button id="calculateBtn">Generate Personalized Diet</button>
+
+      <div id="result" class="hidden">
+        <h3>Your Recommended Daily Calories: <span id="calories"></span> kcal</h3>
+        <h3>Recommended Canteen Meals:</h3>
+        <table id="mealTable">
+          <tr>
+            <th>Meal</th>
+            <th>Calories</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fats (g)</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+// Example Firestore rules (adapt and deploy in Firebase console)
+// - Users may create orders for themselves
+// - Users may update/delete their order only before cutoff time
+// - Admins collection stores admin uids
+
+// NOTE: This is illustrative — convert to proper security rules syntax in console
+
+/*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /menu/{doc} {
+      allow read: if true;
+      allow write: if request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /scheduledOrders/{orderId} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+
+      allow read: if request.auth != null && (
+        resource.data.userId == request.auth.uid || exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+
+      allow update: if request.auth != null && (
+        // admin can always update
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (
+          resource.data.userId == request.auth.uid &&
+          request.time < resource.data.scheduledAt - duration.value(resource.data.cutoffMinutes, 'm')
+        )
+      );
+
+      allow delete: if false; // prefer setting status to 'cancelled'
+    }
+  }
+}
+*/

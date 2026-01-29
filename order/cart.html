@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cart-item { display:flex; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid #eee }
+    .cart-item img{width:80px;height:60px;object-fit:cover;border-radius:8px}
+    .cart-details{flex:1}
+    .qty-controls{display:flex;gap:6px;align-items:center}
+    .qty-controls button{padding:6px 10px;border-radius:6px;border:none;background:#4CAF50;color:#fff;cursor:pointer}
+    .remove-btn{background:#e53935;padding:6px 10px;border-radius:6px;color:#fff;border:none;cursor:pointer}
+    #checkout{background:#ff9800;border:none;padding:12px 18px;border-radius:10px;color:#fff;font-weight:700;cursor:pointer}
+  </style>
+</head>
+<body>
+
+<h2>Your Order</h2>
+<div id="cart-box">
+  <div id="cart-items"></div>
+  <h3 id="total"></h3>
+  <div style="margin-top:12px">
+    <button id="checkout">Proceed to Payment</button>
+  </div>
+</div>
+
+<!-- Payment popup (placeholder) -->
+<div id="payment-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
+  <div style="background:white;padding:20px;border-radius:10px;width:320px">
+    <h3>Payment (Demo)</h3>
+    <p>Total: <span id="pay-total"></span></p>
+    <input id="card" placeholder="Card number" style="width:100%;padding:8px;margin:8px 0;border-radius:6px;border:1px solid #ddd" />
+    <button id="pay-now" style="background:#4CAF50;color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer">Pay Now</button>
+    <button id="pay-cancel" style="background:#ddd;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;margin-left:8px">Cancel</button>
+  </div>
+</div>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItems = document.getElementById("cart-items");
+  const totalEl = document.getElementById("total");
+  const checkoutBtn = document.getElementById('checkout');
+  const paymentPopup = document.getElementById('payment-popup');
+  const payTotal = document.getElementById('pay-total');
+  const payNow = document.getElementById('pay-now');
+  const payCancel = document.getElementById('pay-cancel');
+
+  function renderCart(){
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, idx) => {
+      const row = document.createElement('div');
+      row.className = 'cart-item';
+
+      const img = document.createElement('img');
+      img.src = item.image || '../images/default.png';
+
+      const details = document.createElement('div');
+      details.className = 'cart-details';
+      details.innerHTML = `<strong>${item.name}</strong><div>₹${item.price} each</div>`;
+
+      const qty = document.createElement('div');
+      qty.className = 'qty-controls';
+      const minus = document.createElement('button'); minus.textContent = '-';
+      const qspan = document.createElement('span'); qspan.textContent = item.quantity; qspan.style.minWidth='22px'; qspan.style.display='inline-block'; qspan.style.textAlign='center';
+      const plus = document.createElement('button'); plus.textContent = '+';
+      const remove = document.createElement('button'); remove.textContent = 'Remove'; remove.className='remove-btn';
+
+      minus.addEventListener('click', ()=>{
+        if(item.quantity>1){ item.quantity--; saveAndRender(); }
+      });
+      plus.addEventListener('click', ()=>{ item.quantity++; saveAndRender(); });
+      remove.addEventListener('click', ()=>{ cart.splice(idx,1); saveAndRender(); });
+
+      const priceEl = document.createElement('div'); priceEl.innerHTML = `<strong>₹${item.price * item.quantity}</strong>`;
+
+      qty.appendChild(minus); qty.appendChild(qspan); qty.appendChild(plus);
+      row.appendChild(img); row.appendChild(details); row.appendChild(qty); row.appendChild(priceEl); row.appendChild(remove);
+
+      cartItems.appendChild(row);
+      total += item.price * item.quantity;
+    });
+    totalEl.textContent = `Total: ₹${total}`;
+    if(payTotal) payTotal.textContent = `₹${total}`;
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function saveAndRender(){ renderCart(); }
+
+  renderCart();
+
+  checkoutBtn.addEventListener('click', ()=>{
+    paymentPopup.style.display = 'flex';
+  });
+
+  payCancel.addEventListener('click', ()=> paymentPopup.style.display = 'none');
+
+  payNow.addEventListener('click', ()=>{
+    // demo payment success
+    alert('Payment successful (demo). Thank you!');
+    localStorage.removeItem('cart');
+    window.location.href = '../index.html';
+  });
+</script>
+
+</body>
+</html>

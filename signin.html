@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Canteen | Sign In / Sign Up</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.webp" alt="Smart Canteen Logo">
+      <h1><span>Smart</span> Canteen</h1>
+    </div>
+
+    <nav>
+      <ul>
+        
+        <li><a href="signin.html" class="active">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== SIGNIN/SIGNUP CONTAINER ===== -->
+  <section class="signin-container">
+    <div class="signin-box">
+      <!-- Sign In Form -->
+      <form id="signin-form" class="signin-form">
+        <h2>Welcome Back</h2>
+        <p>Sign in to continue ordering your favourite meals!</p>
+
+        <label for="signin-email">Email</label>
+        <input type="email" id="signin-email" placeholder="Enter your email" required>
+
+        <label for="signin-password">Password</label>
+        <input type="password" id="signin-password" placeholder="Enter your password" required>
+
+        <button type="submit" class="signin-btn">Sign In</button>
+        <p class="signup-text">Don’t have an account? 
+          <a href="#" id="show-signup">Sign Up Now</a>
+        </p>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signup-form" class="signin-form hidden">
+        <h2>Create Account</h2>
+        <p>Join Smart Canteen and start ordering healthy meals!</p>
+
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="Enter your email" required>
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="Enter your password" required>
+
+        <button type="submit" class="signin-btn">Sign Up</button>
+        <p class="signup-text">Already have an account? 
+          <a href="#" id="show-signin">Sign In</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Smart Canteen</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script type="module" src="scripts/firebase-config.js"></script>
+  <script type="module" src="scripts/auth.js"></script>
+
+  <script>
+    // Toggle between Sign In and Sign Up
+    const signInForm = document.getElementById('signin-form');
+    const signUpForm = document.getElementById('signup-form');
+    const showSignup = document.getElementById('show-signup');
+    const showSignin = document.getElementById('show-signin');
+
+    showSignup.addEventListener('click', (e) => {
+      e.preventDefault();
+      signInForm.classList.add('hidden');
+      signUpForm.classList.remove('hidden');
+    });
+
+    showSignin.addEventListener('click', (e) => {
+      e.preventDefault();
+      signUpForm.classList.add('hidden');
+      signInForm.classList.remove('hidden');
+    });
+  
+  </script>
+
+  <style>
+    /* quick inline styling for hidden */
+    .hidden { display: none; }
+  </style>
+</body>
+</html>

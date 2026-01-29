@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Canteen System</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="diet-chart/style.css">
+<!--  it avoid the home page shown without login -->
+  <style>
+    body {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="logo">
+    <img src="images/logo.webp" alt="Smart Canteen Logo">
+    <h1><span>Smart</span> Canteen</h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="preshdul.html">Pre-Schedule</a></li>
+      <li><a href="about.html">About</a></li>
+
+      
+
+      <li>
+        <a href="order/cart.html">
+          🛒 (<span id="cart-count">0</span>)
+        </a>
+      </li>
+
+      <li id="signin-link"><a href="signin.html">Sign In</a></li>
+
+      <li class="user-info" style="position:relative;">
+        <div class="user-circle" id="user-circle" title="Account">G</div>
+        <div class="user-popup" id="user-popup">
+          <div style="margin-bottom:8px;">Signed in as <strong id="popup-email">Guest</strong></div>
+          <button id="popup-logout" style="background:#e53935;color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer">Logout</button>
+        </div>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <h2>Welcome to Smart Canteen</h2>
+    <p>Order food easily, save time, and eat healthy — all in one place.</p>
+    <a href="#menu" class="btn">Order Now</a>
+  </div>
+</section>
+
+
+<!-- diet section -->
+  <section class="diet-section" id="diet">
+  <h2>Personalized Diet Plans and Subscriptions</h2>
+  <p>Choose a diet plan that suits your health goals </p>
+
+  <div class="diet-container">
+    <div class="diet-card">
+      <img src="images/gym.jpg" alt="Gym Diet">
+      <h3>Gym & Fitness Diet</h3>
+      <p>High protein, balanced carbs, and nutrition-packed meals for your daily workouts.
+        Subscription Plans
+      </p>
+      <a href="diet-chart/gym.html" class="btn">Explore Plan</a>
+    </div> 
+
+    <div class="diet-card">
+      <img src="images/diets.jpeg" alt="DIET PLAN">
+      <h3>Diet Plan</h3>
+      <p>Gym Diet,Heart Health Diet,Diabetic Friendly Diet,Weight Loss,Weight Gain,Student/Office Plan </p>
+      <a href="diet-chart/index.html" class="btn">Explore Plan</a>
+    </div>
+
+    
+  </div>
+</section>
+
+
+<!-- ===== MENU ===== -->
+<section id="menu" class="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+
+    <div class="menu-item">
+      <img src="images/paratha.jpg" alt="Paratha">
+      <h3>Paratha</h3>
+      <p>₹60 | Served with curd & pickle</p>
+      <button class="order-btn" data-name="Paratha" data-price="60">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/chole bhature.avif" alt="Chole Bhature">
+      <h3>Chole Bhature</h3>
+      <p>₹100 | Spicy chole with fluffy bhature</p>
+      <button class="order-btn" data-name="Chole Bhature" data-price="100">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/North indian meal.jpg" alt="North Indian Thali">
+      <h3>North Indian Thali</h3>
+      <p>₹150 | Includes dal, sabzi, rice & roti</p>
+      <button class="order-btn" data-name="North Indian Thali" data-price="150">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/dosa.jpg" alt="Dosa">
+      <h3>Dosa</h3>
+      <p>₹70 | Crispy dosa with sambar & chutney</p>
+      <button class="order-btn" data-name="Dosa" data-price="70">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/Kebab.jpg" alt="Kebab">
+      <h3>Kebab</h3>
+      <p>₹120 | Juicy and perfectly grilled</p>
+      <button class="order-btn" data-name="Kebab" data-price="120">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/roll.webp" alt="Rolls">
+      <h3>Rolls</h3>
+      <p>₹80 | Stuffed with paneer or chicken</p>
+      <button class="order-btn" data-name="Rolls" data-price="80">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/salad.jpg" alt="Salad">
+      <h3>Salad</h3>
+      <p>₹50 | Fresh veggies with dressing</p>
+      <button class="order-btn" data-name="Salad" data-price="50">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/idli.jpg" alt="Idli">
+      <h3>Idli</h3>
+      <p>₹40 | Soft idlis served with chutney</p>
+      <button class="order-btn" data-name="Idli" data-price="40">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/Biryani.jpg" alt="Biryani">
+      <h3>Biryani</h3>
+      <p>₹150 | Flavorful rice with rich spices</p>
+      <button class="order-btn" data-name="Biryani" data-price="150">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/tea.jpg" alt="Tea">
+      <h3>Tea</h3>
+      <p>₹20 | Hot and refreshing masala chai</p>
+      <button class="order-btn" data-name="Tea" data-price="20">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/pasta.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>₹120 | Creamy and cheesy delight</p>
+      <button class="order-btn" data-name="Pasta" data-price="120">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/noodles.jpg" alt="Noodles">
+      <h3>Noodles</h3>
+      <p>₹100 | Stir-fried with veggies</p>
+      <button class="order-btn" data-name="Noodles" data-price="100">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" alt="Cake">
+      <h3>Cake</h3>
+      <p>₹590 | Soft, sweet & freshly baked</p>
+      <button class="order-btn" data-name="Cake" data-price="590">Order Now</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="images/pizza.jpg" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>₹150 | Loaded with cheese and toppings</p>
+      <button class="order-btn" data-name="Pizza" data-price="150">Order Now</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-container" style="max-width:1100px;margin:0 auto;padding:30px 20px;">
+    <div class="footer-logo">
+      <img src="images/logo.webp" alt="logo">
+      <h2>Smart Canteen</h2>
+      <p>Healthy meals, smarter choices.</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="preshdul.html">Pre-Schedule</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Email: support@smartcanteen.example</li>
+          <li>Phone: +91 90000 00000</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:18px; border-top:1px solid #e6efea; padding-top:12px; text-align:center; color:#444">
+      <p style="margin:6px 0">© 2025 Smart Canteen System</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- CART + USER DISPLAY SCRIPT -->
+<script src="scripts/script.js"></script>
+
+<!-- Diet chart script (runs embedded diet tools on homepage) -->
+<script src="diet-chart/script.js"></script>
+
+
+
+<!--  FIREBASE AUTH + HEADER/DASHBOARD -->
+<section id="user-dashboard" style="display:none; padding:16px; background:#f8f8f8; margin:16px; border-radius:8px;">
+  <h3 id="dashboard-heading">Welcome, <span id="dashboard-email"></span></h3>
+  <p><a href="order/cart.html">Go to your orders</a></p>
+</section>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+  import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+  import { firebaseConfig } from "./scripts/firebase-config.js";
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const dashboard = document.getElementById("user-dashboard");
+  const dashboardEmail = document.getElementById("dashboard-email");
+  const emailText = document.getElementById("logged-user");
+  const signinLink = document.getElementById("signin-link");
+  const userCircle = document.getElementById('user-circle');
+  const userPopup = document.getElementById('user-popup');
+  const popupEmail = document.getElementById('popup-email');
+  const popupLogout = document.getElementById('popup-logout');
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.body.style.display = "block";
+      const email = user.email || localStorage.getItem("userEmail") || "User";
+      if (emailText) emailText.textContent = email;
+      if (dashboardEmail) dashboardEmail.textContent = email;
+      if (signinLink) signinLink.style.display = "none";
+      if (userCircle) {
+        // set initials
+        const parts = email.split('@')[0].split(/[._\- ]+/);
+        const initials = parts.map(p=>p[0]?.toUpperCase()).slice(0,2).join('');
+        userCircle.textContent = initials || 'U';
+      }
+      if (popupEmail) popupEmail.textContent = email;
+      if (dashboard) dashboard.style.display = "block";
+    } else {
+      // not logged in — hide page and redirect to sign in
+      document.body.style.display = "none";
+      window.location.href = "signin.html";
+    }
+  });
+
+  // Toggle popup when clicking the circle
+  if (userCircle && userPopup) {
+    userCircle.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      userPopup.style.display = userPopup.style.display === 'block' ? 'none' : 'block';
+    });
+    // close popup when clicking outside
+    document.addEventListener('click', ()=> userPopup.style.display = 'none');
+    userPopup.addEventListener('click', (e)=> e.stopPropagation());
+  }
+
+  if (popupLogout) {
+    popupLogout.addEventListener('click', ()=>{
+      signOut(auth).then(()=>{
+        localStorage.removeItem('userEmail');
+        window.location.href = 'signin.html';
+      }).catch(err=>alert(err.message));
+    });
+  }
+</script>
+
+
+
+
+
+</body>
+</html>

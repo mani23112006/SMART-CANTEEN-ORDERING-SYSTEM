@@ -1,0 +1,324 @@
+.ps-container {
+    max-width: 1800px;
+    margin: 28px auto;
+    padding: 18px;
+    max-height: 100%;
+}
+
+/* ===== HEADER ===== */
+.ps-container header {
+    background: linear-gradient(90deg, #06aa06, #6dce6d);
+    padding: 14px 20px;
+    border-radius: 0px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+
+
+}
+
+.ps-container header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ps-container header .logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ps-container header nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    align-items: center;
+}
+
+.ps-container header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ps-container header nav ul li a.active {
+    text-decoration: underline;
+}
+
+/* Diet card embed styles */
+.diet-card-embed{display:flex;gap:18px;align-items:stretch;background:transparent;border-radius:12px;overflow:hidden;box-shadow:0 12px 36px rgba(8,15,12,0.08)}
+.diet-card-media{width:360px;min-width:220px;background-image:url("../images/diet%20plan.webp");background-size:cover;background-position:center;position:relative}
+.diet-card-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,45,10,0.35), rgba(3,45,10,0.55));}
+.diet-card-content{flex:1;padding:28px 24px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));}
+.diet-card-content h2{margin:0 0 8px 0;font-size:24px;color:#052e05}
+.diet-sub{color:#374151;margin:0 0 12px;font-size:15px}
+.diet-features{margin:8px 0 18px 18px;color:#374151}
+.diet-features li{margin:6px 0}
+.diet-cta{display:flex;gap:12px;align-items:center}
+.diet-cta .btn{padding:12px 16px;border-radius:10px;font-weight:600}
+.diet-cta .btn.primary{background:#06aa06;color:#fff;box-shadow:0 6px 18px rgba(6,170,6,0.18)}
+.diet-cta .btn.outline{background:#fff;border:1px solid #06aa06;color:#06aa06}
+.diet-cta .btn.outline:hover{background:#f6fff6}
+
+@media(max-width:900px){
+    .diet-card-embed{flex-direction:column}
+    .diet-card-media{width:100%;height:200px}
+    .diet-card-content{padding:18px}
+    .diet-cta{justify-content:flex-start}
+}
+
+/* ===== PAGE HEADER TEXT ===== */
+.ps-header {
+    margin: 12px 0 18px 0;
+}
+
+.ps-header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.ps-header .muted {
+    color: #666;
+    margin-top: 6px;
+}
+
+/* ===== GRID ===== */
+.ps-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 20px;
+    margin-top: 18px;
+}
+
+/* ===== MENU ===== */
+.ps-menu {
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 65vh;
+    overflow: auto;
+    padding-right: 6px;
+}
+
+.menu-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.menu-row img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-meta {
+    flex: 1;
+}
+
+.menu-name {
+    font-weight: 700;
+}
+
+.menu-price {
+    color: #4CAF50;
+}
+
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qty-control button {
+    background: #eee;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-btn {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== ORDER PANEL ===== */
+.ps-order {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ps-scheduler {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ps-scheduler label {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #333;
+}
+
+.ps-scheduler input,
+.ps-scheduler select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* ===== SUMMARY ===== */
+.ps-summary {
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.summary-items {
+    max-height: 240px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 6px;
+}
+
+.summary-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #fafafa;
+}
+
+.summary-row img {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.s-meta {
+    flex: 1;
+}
+
+.s-sub {
+    font-weight: 700;
+    color: #333;
+}
+
+.s-actions button {
+    margin-left: 6px;
+    background: #eee;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.summary-total {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* ===== ORDERS ===== */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.o-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.o-items {
+    margin-top: 8px;
+}
+
+.o-actions {
+    margin-top: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px) {
+    .ps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ps-order {
+        order: 2;
+    }
+}
+
+/* ===== SMALL POLISH ===== */
+.muted {
+    color: #eef8f0;
+}
+
+.summary-items::-webkit-scrollbar,
+.menu-list::-webkit-scrollbar {
+    height: 6px;
+}

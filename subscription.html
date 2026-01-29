@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subscription Plans - Smart Canteen</title>
+  <link rel="stylesheet" href="style/style.css">
+  <style>
+    .sub-wrap{max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(8,15,12,0.06)}
+    .plan{border:1px solid #eee;padding:18px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .plan .price{font-size:20px;font-weight:700;color:#06aa06}
+    .subscribe-btn{background:#06aa06;color:#fff;padding:8px 12px;border-radius:8px;border:none}
+  </style>
+</head>
+<body>
+  <header style="padding:18px;background:linear-gradient(90deg,#06aa06,#6dce6d);color:#fff;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Smart Canteen</h2><a href="index.html" style="color:#fff;text-decoration:none">Home</a></div>
+  </header>
+
+  <main class="sub-wrap">
+    <h1>Subscription Plans</h1>
+    <p>Get advanced meal planning, priority scheduling, and personalized diet consultation.</p>
+
+    <div class="plan">
+      <div>
+        <div style="font-weight:700">Monthly Plan</div>
+        <div class="muted">Billed monthly — cancel anytime</div>
+      </div>
+      <div style="text-align:right">
+        <div class="price">₹199 / month</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div>
+        <div style="font-weight:700">Quarterly Plan</div>
+        <div class="muted">Best value</div>
+      </div>
+      <div style="text-align:right">
+        <div class="price">₹499 / 3 months</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div>
+        <div style="font-weight:700">Yearly Plan</div>
+        <div class="muted">Save more</div>
+      </div>
+      <div style="text-align:right">
+        <div class="price">₹1799 / year</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
+    </div>
+
+    <p style="margin-top:14px;color:#555">Subscription demo: buttons are placeholders. Want payment integration (Stripe/PayPal)? I can wire it next.</p>
+  </main>
+</body>
+</html>

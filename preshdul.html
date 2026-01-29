@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pre-Schedule Meal - Smart Canteen</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/preshdul.css">
+  </head>
+  <body>
+    <main class="ps-container">
+      
+     <!-- ===== HEADER ===== -->
+
+<header>
+  <div class="logo">
+    <img src="images/logo.webp" alt="Smart Canteen Logo">
+    <h1><span>Smart</span> Canteen</h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="preshdul.html">Pre-Schedule</a></li>
+      <li><a href="about.html">About</a></li>
+
+      <li>
+        <a href="order/cart.html">
+          🛒 (<span id="cart-count">0</span>)
+        </a>
+      </li>
+    
+
+    </ul>
+  </nav>
+</header>
+
+      <div class="ps-header">
+        <h1>Pre-Schedule Meal</h1>
+        <p class="muted">Choose items, pick a date & time, and schedule your meal.</p>
+      </div>
+
+      <section class="ps-grid">
+        <aside class="ps-menu">
+          <div class="ps-controls">
+            <input id="filter-text" type="search" placeholder="Search menu" aria-label="Search menu">
+            <select id="category-filter"><option value="">All categories</option></select>
+          </div>
+          <div id="menu-list" class="menu-list">Loading menu…</div>
+        </aside>
+
+        <section class="ps-order">
+          <div class="ps-scheduler">
+            <label>Date <input id="schedule-date" type="date"></label>
+            <label>Time <input id="schedule-time" type="time"></label>
+            <label>Cutoff (mins) <input id="cutoff-min" type="number" value="30" min="10" max="60" step="5"></label>
+            <div style="font-size:13px;color:#555;margin-top:6px">Allowed cutoff: 10–50 minutes (input accepts up to 60, values &gt;50 will be limited to 50)</div>
+          </div>
+
+          <div class="ps-summary">
+            <h2>Your Selection</h2>
+            <div id="summary-items" class="summary-items">No items selected</div>
+            <div class="summary-total">Total: ₹<span id="summary-total">0</span></div>
+            <div class="summary-actions">
+              <button id="confirm-order" class="btn primary">Confirm & Schedule</button>
+              <button id="clear-selection" class="btn">Clear</button>
+            </div>
+          </div>
+
+          <div class="ps-upcoming">
+            <h3>Upcoming Scheduled Orders</h3>
+            <div id="orders-container" class="orders-container">Loading…</div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="scripts/preshdul.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Canteen | Pre-Schedule Order</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+ 
+
+  
+
+<footer class="footer">
+  <p>&copy; 2025 Smart Canteen. All rights reserved.</p>
+</footer>
+
